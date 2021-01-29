@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<section id="log" class="cad">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Login</h2>
+          <p></p>
+        
+
+          <div class="col-lg-7">
+            <form action="{% url 'users-signin' %}" method="post" role="form" class="php-email-form">
+            {% csrf_token %}
+             <div class="form-row">
+                  <div class="col-md-12 form-group">
+                      {{ form.matricula|add_class:'form-control'|append_attr:'placeholder:Matricula'|append_attr:'data-rule:"minlen:4"' }}
+                      <div class="validate"></div>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-12 form-group">
+                        {{ form.password|add_class:'form-control'|append_attr:'placeholder:Senha'|append_attr:'data-rule:"minlen:4"' }}
+                        <div class="validate"></div>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message">
+                  {% if form.errors %}
+                      Your username and password didn't match. Please try again.
+                  {% endif %}
+
+                  {% if next %}
+                      {% if user.is_authenticated %}
+                            Your account doesn't have access to this page. To proceed, please login with an account that has access.
+                      {% else %}
+                            Please login to see this page.
+                      {% endif %}
+                  {% endif %}
+                 
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+                 <div class="text-center"><button type="submit">Entrar</button></div>
+                
+                
+            </div>
+            </form>
+          </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>MecanografiaAut</h1>
+          <h2>O MecanografiaAut foi desenvolvido com o objetivo de simplificar o acesso dos alunos do IFPB - Campus Cajazeiras no momento de utilizar os recursos da mecanografia do Campus.</h2>
+          <div class="d-lg-flex">
+            <a href="cadastro/" class="btn-get-started scrollto">Cadastre-se</a>
+          
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img' %}" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'img/impr.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index/">Mecanografia</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="{% static 'img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Página inicial</a></li>
+          <li><a href="#about">Horários</a></li>
+          
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="login/" class="get-started-btn scrollto">Fazer Login</a>
+
+    </div>
+  </header>
+
+<!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Cliens Section ======= -->
+    <section id="cliens" class="cliens section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'img/clients/ifpbb.png' %}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+<section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Horários de Funcionamento</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Segunda à Sexta
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> DIA:   7hr15min às 11hrs.</li>
+              <li><i class="ri-check-double-line"></i> TARDE: 13hr15min às 17hrs.</li>
+              <li><i class="ri-check-double-line"></i> NOITE: 18hr15min às 22hrs.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+        <a type="button" href="{% url 'users-signout' %}" class="btn btn-primary">Sair</a>
+
+        <div class="section-title">
+          <h2>Solicitações</h2>
+        
+        </div>
+        
+
+        <div class="row">
+
+		{% for form in forms %}	
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+            
+              <div class="member-info">
+                <h4>{{ form.nome }}</h4>
+                <span>{{ form.disciplina }}</span>
+                <p>Nº de paginas: {{ form.numero_de_paginas }} Nº de cópias: {{ form.numero_de_copias }}</p>
+				<p>{{ form.get_tipo }}</p>
+				<br>
+				<form method="post" action="" enctype="multipart/form-data">
+				<a class="btn btn-success" href="{% url 'forms-delete' form.pk %}" role="button" style="color: #FFFFFF;">Aceitar</a>
+				<a class="btn btn-danger" href="{% url 'forms-delete' form.pk %}" role="button" style="color: #FFFFFF;">Recusar</a>
+				</form>
+              </div>
+            </div>
+          </div>
+
+         {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+
+{% endblock %}

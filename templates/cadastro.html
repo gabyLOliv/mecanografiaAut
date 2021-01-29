@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<section id="log" class="cad">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Cadastro<h2>
+            <p><p>
+
+        
+            <div class="col-lg-7">
+                <form method="post" action="{% url 'users-signup' %}" class="php-email-form">
+                    {% csrf_token %}
+
+                    {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+
+                    
+                    <div class="form-row">
+                        <div class="col-md-12 form-group">
+                            {{ form.username|add_class:'form-control'|append_attr:'placeholder:Nome completo'|append_attr:'data-rule:"minlen:4"' }}
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 form-group">
+                            {{ form.matricula|add_class:'form-control'|append_attr:'placeholder:Matricula'|append_attr:'data-rule:"minlen:4"' }}
+                            <div class="validate"></div>
+                        </div>
+                    </div>    
+                    <div class="form-row">
+                        <div class="col-md-12 form-group">
+                            {{ form.password|add_class:'form-control'|append_attr:'placeholder:Senha'|append_attr:'data-rule:"minlen:4"' }}
+                            <div class="validate"></div>
+                        </div>
+                    </div>    
+                        <div class="text-center"><button type="submit">Cadastrar</button></div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}

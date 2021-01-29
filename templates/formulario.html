@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<body>
+
+
+    <section id="cad" class="cad" text-align = "center">
+    <div class="container" data-aos="fade-up">
+      
+      <button type="button" class="btn btn-primary">Notificações <span class="badge badge-light">4</span></button>
+      <a type="button" href="{% url 'users-signout' %}" class="btn btn-primary">Sair</a>
+      
+
+        <div class="section-title">
+            <h2>Formulário<h2>
+        <p><p>
+          
+        
+        <div class="col-lg-7">
+            <form method="post" id='dados' >
+                {% csrf_token %}
+                <div class="php-email-form">
+
+                    <b><label></b>
+                       {{ form.nome|add_class:'form-control'|append_attr:'placeholder:Nome'|append_attr:'data-rule:"minlen:4"' }}
+                      
+                        
+                    <b><label></b>
+                       {{ form.disciplina|add_class:'form-control'|append_attr:'placeholder:Disciplina'|append_attr:'data-rule:"minlen:4"' }}
+                    
+                    <b><label></b>
+                        {{ form.numero_de_copias|add_class:'form-control'|append_attr:'placeholder:Número de cópias'|append_attr:'data-rule:"minlen:4"' }}
+                       
+              
+                    <b><label></b>
+                        {{ form.numero_de_paginas|add_class:'form-control'|append_attr:'placeholder:Número de páginas'|append_attr:'data-rule:"minlen:4"' }}
+                    
+                        
+                        
+    
+                    
+                    
+                    <b><label style="margin-left: -5px"></b>
+                    <input type="radio" name="tipo" value="0">Frente
+                    <input type="radio" name="tipo" value="1">Frente e verso<br><br>
+                    
+                      
+                    <div class="text-center"><button type="submit">Solicitar</button></div>
+                    
+                   
+                </div>
+            
+        </div>  
+    </div>           
+                
+                
+                
+                
+            </form>
+			
+
+        
+    
+</body>
+    
+{% endblock %}
+
+<style>
+
+ 
